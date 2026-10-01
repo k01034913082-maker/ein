@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+.light {
+  color-scheme: light;
+}
+
+/* Pulsing SVG Pin Animations */
+@keyframes svgPulseRadar {
+  0% {
+    r: 6px;
+    opacity: 0.9;
+  }
+  70% {
+    r: 22px;
+    opacity: 0;
+  }
+  100% {
+    r: 22px;
+    opacity: 0;
+  }
+}
+
+.svg-ping-circle {
+  animation: svgPulseRadar 2.2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}
+
+/* Marching Ants / Route dash animation */
+@keyframes routeDash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+.animated-route-dash {
+  animation: routeDash 2s linear infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+.light ::-webkit-scrollbar-thumb {
+  background: #d5c7b3;
+  border-radius: 3px;
+}
+.light ::-webkit-scrollbar-thumb:hover {
+  background: #b8a48b;
+}
+
+/* Smooth fade-in utility */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
